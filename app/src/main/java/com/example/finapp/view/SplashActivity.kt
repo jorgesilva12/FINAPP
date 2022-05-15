@@ -1,10 +1,11 @@
-package com.example.finapp
+package com.example.finapp.view
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.example.finapp.R
 
 class SplashActivity : AppCompatActivity() {
 
@@ -24,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     fun carregaActivity(){
-        startActivity(Intent(this,LoginActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
         finish()
 
     }
