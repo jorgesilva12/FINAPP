@@ -2,24 +2,30 @@ package com.example.finapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 
 class SplashActivity : AppCompatActivity() {
 
-    private val TAG: String = "FINAPP"
-
+    private val TAG = "FINAPP"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activy_splash)
 
+        val maxSplashTime: Long = 5000
+
         Log.d(TAG,"Iniciando Splah")
 
-        carregaActivity()
+        Handler().postDelayed({
+            carregaActivity()
+        },maxSplashTime)
+
     }
 
     fun carregaActivity(){
-        //var telaLogin: Intent = Intent(SplashActivity.this,LoginActivity.class)
+        startActivity(Intent(this,LoginActivity::class.java))
+        finish()
 
     }
 }
